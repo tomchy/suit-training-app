@@ -10,7 +10,29 @@
 		reg = <0xa6000 DT_SIZE_K(244)>;
 	};
 
+	cpuapp_recovery_partition: partition@e3000 {
+		reg = <0xe3000 DT_SIZE_K(76)>;
+	};
+
 	companion_partition: partition@f6000 {
 		reg = <0xf6000 DT_SIZE_K(36)>;
+	};
+};
+
+&cpurad_rx_partitions {
+	compatible = "nordic,owned-partitions", "fixed-partitions";
+	status = "okay";
+	perm-read;
+	perm-execute;
+	perm-secure;
+	#address-cells = < 0x1 >;
+	#size-cells = < 0x1 >;
+
+	cpurad_slot0_partition: partition@66000 {
+		reg = < 0x66000 DT_SIZE_K(160) >;
+	};
+
+	cpurad_recovery_partition: partition@8e000 {
+		reg = < 0x8e000 DT_SIZE_K(92) >;
 	};
 };
