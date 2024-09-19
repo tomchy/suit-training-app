@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+&cpuapp_rx_partitions {
+	companion_partition: partition@100000 {
+		reg = <0x100000 DT_SIZE_K(36)>;
+	};
+};
+
+&cpuapp_rw_partitions {
+	/delete-node/ partition@100000;
+	dfu_partition: partition@110000 {
+		reg = < 0x110000 DT_SIZE_K(844) >;
+	};
+};
