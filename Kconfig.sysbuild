@@ -11,3 +11,6 @@ config NRF_DEFAULT_IPC_RADIO
 
 config SUIT_BUILD_FLASH_COMPANION
 	default y
+
+config SUIT_BUILD_RECOVERY
+	default y
