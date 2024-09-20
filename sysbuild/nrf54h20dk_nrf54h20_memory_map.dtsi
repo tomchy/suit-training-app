@@ -7,15 +7,22 @@
 &cpuapp_rx_partitions {
 	/delete-node/ partition@a6000;
 	cpuapp_slot0_partition: partition@a6000 {
-		reg = <0xa6000 DT_SIZE_K(244)>;
+		reg = <0xa6000 DT_SIZE_K(200)>;
 	};
 
-	cpuapp_recovery_partition: partition@e3000 {
-		reg = <0xe3000 DT_SIZE_K(76)>;
+	cpuapp_recovery_partition: partition@d8000 {
+		reg = <0xd8000 DT_SIZE_K(184)>;
 	};
 
-	companion_partition: partition@f6000 {
-		reg = <0xf6000 DT_SIZE_K(36)>;
+	companion_partition: partition@107000 {
+		reg = <0x107000 DT_SIZE_K(36)>;
+	};
+};
+
+&cpuapp_rw_partitions {
+	/delete-node/ partition@100000;
+	dfu_partition: partition@110000 {
+		reg = < 0x110000 DT_SIZE_K(844) >;
 	};
 };
 
